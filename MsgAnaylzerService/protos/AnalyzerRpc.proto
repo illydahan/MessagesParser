@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+package AnalyzerRpc;
+
+option csharp_namespace = "MessagesAPI";
+
+service Analyzer {
+    rpc Analyze (InputMessage) returns (Response) {}
+}
+
+message InputMessage {
+    string payload = 1;
+}
+
+message Response {
+    int32 result = 1;
+}
